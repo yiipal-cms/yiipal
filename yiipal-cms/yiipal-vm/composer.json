@@ -1,0 +1,36 @@
+{
+    "name": "yiipal-cms/yiipal-vm",
+    "description": "A VM for local Yii development, built with Vagrant + Ansible",
+    "keywords": ["yiipal-vm", "yii2", "framework", "vagrant", "vm", "virtual machine"],
+    "homepage": "https://github.com/yiipal-cms/yiipal-vm/",
+    "type": "project",
+    "license": "MIT",
+    "support": {
+        "issues": "https://github.com/yiipal-cms/yiipal-vm/issues?state=open",
+        "forum": "https://github.com/yiipal-cms/yiipal-vm/forum/",
+        "wiki": "https://github.com/yiipal-cms/yiipal-vm/wiki/",
+        "source": "https://github.com/yiipal-cms/yiipal-vm"
+    },
+    "config": {
+        "process-timeout": 1800
+    },
+    "scripts": {
+        "run-tests": "molecule test",
+        "docker-bake": "./provisioning/docker/bake.sh",
+        "docker-save-image": "./provisioning/docker/save-image.sh",
+        "docker-load-image": "./provisioning/docker/load-image.sh"
+    },
+    "require-dev": {
+        "geerlingguy/drupal-vm": "^6.0"
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://packagist.org"
+        },
+        {
+            "type": "composer",
+            "url": "https://mirrors.aliyun.com/composer/"
+        }
+    ]
+}
