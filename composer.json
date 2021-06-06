@@ -1,0 +1,69 @@
+{
+    "name": "yiipal-cms/yiipal",
+    "description": "Project template for Yiipal2 sites.",
+    "keywords": ["yiipal", "yiipal-cms", "yii2", "framework", "advanced", "project template"],
+    "homepage": "https://github.com/yiipal-cms/yiipal/",
+    "type": "project",
+    "license": "BSD-3-Clause",
+    "support": {
+        "issues": "https://github.com/yiipal-cms/yiipal/issues?state=open",
+        "forum": "https://github.com/yiipal-cms/yiipal/forum/",
+        "wiki": "https://github.com/yiipal-cms/yiipal/wiki/",
+        "source": "https://github.com/yiipal2/yiipal2"
+    },
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.0.0",
+        "yiisoft/yii2": "~2.0.14",
+        "yiisoft/yii2-bootstrap": "~2.0.0",
+        "yiisoft/yii2-swiftmailer": "~2.0.0 || ~2.1.0",
+        "oomphinc/composer-installers-extender": "^1.1 || ^2",
+        "vlucas/phpdotenv": "^5.3.0"
+    },
+    "require-dev": {
+        "yiisoft/yii2-debug": "~2.1.0",
+        "yiisoft/yii2-gii": "~2.1.0",
+        "yiisoft/yii2-faker": "~2.0.0",
+        "codeception/codeception": "^4.0",
+        "codeception/module-asserts": "^1.0",
+        "codeception/module-yii2": "^1.0",
+        "codeception/module-filesystem": "^1.0",
+        "codeception/verify": "~0.5.0 || ~1.1.0",
+        "symfony/browser-kit": ">=2.7 <=4.2.4",
+        "yiipal-cms/yiipal-vm": "dev-master"
+    },
+    "scripts": {
+        "setup-dotenv": [
+            "if [ ! -f .env ]; then cp .env.example .env; fi"
+        ],
+        "post-install-cmd": [
+            "@setup-dotenv"
+        ]
+    },
+    "config": {
+        "process-timeout": 1800,
+        "fxp-asset": {
+            "enabled": false
+        }
+    },
+    "extra": {
+        "installer-types": [
+        ],
+        "installer-paths": {
+        }
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        },
+        {
+            "type": "composer",
+            "url": "https://mirrors.aliyun.com/composer/"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/yiipal-cms/yiipal-vm.git"
+        }
+    ]
+}

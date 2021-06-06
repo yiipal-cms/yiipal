@@ -1,0 +1,9 @@
+#!/usr/bin/env php
+<?php
+/**
+ * Yiipal console bootstrap file.
+ */
+
+defined('YII_RUNTIME') or define('YII_RUNTIME', 'console');
+require __DIR__ . './index.php';
+exit($exitCode);

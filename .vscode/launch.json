@@ -1,0 +1,25 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Listen for XDebug",
+      "type": "php",
+      "request": "launch",
+      "port": 9000,
+      "pathMappings": {
+        "/var/www/yiipal": "${workspaceRoot}",
+        "/var/www/yiipal/vendor": "${workspaceRoot}/vendor",
+        "/var/www/yiipal/docroot": "${workspaceRoot}/docroot",
+        "/var/www/yiipal/docroot/backend": "${workspaceRoot}/docroot/backend",
+        "/var/www/yiipal/docroot/common": "${workspaceRoot}/docroot/common",
+        "/var/www/yiipal/docroot/frontend": "${workspaceRoot}/docroot/frontend"
+      },
+      "xdebugSettings": {
+        "max_children": 10000
+      }
+    }
+  ]
+}
