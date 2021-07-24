@@ -14,11 +14,13 @@
     "minimum-stability": "dev",
     "require": {
         "php": ">=7.0.0",
+        "cweagans/composer-patches": "^1.7",
         "yiisoft/yii2": "~2.0.14",
         "yiisoft/yii2-bootstrap": "~2.0.0",
         "yiisoft/yii2-swiftmailer": "~2.0.0 || ~2.1.0",
         "oomphinc/composer-installers-extender": "^1.1 || ^2",
-        "vlucas/phpdotenv": "^5.3.0"
+        "vlucas/phpdotenv": "^5.3.0",
+        "yiipal-cms/core": "dev-master"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.1.0",
@@ -47,9 +49,32 @@
         }
     },
     "extra": {
+        "enable-patching": true,
+        "composer-exit-on-patch-failure": true,
+        "patchLevel": {
+            "yiipal-cms/core": "-p2"
+        },
         "installer-types": [
+            "yiipal-core"
         ],
         "installer-paths": {
+            "docroot/core": [
+                "type:yiipal-core"
+            ]
+        },
+        "patches-ignore": {
+            "yiisoft/yii2-debug": {
+                "phpunit/phpunit": {
+                    "Fix PHP 7 compatibility": "https://yiisoft.github.io/phpunit-patches/phpunit_php7.patch",
+                    "Fix PHP 8 compatibility": "https://yiisoft.github.io/phpunit-patches/phpunit_php8.patch"
+                }
+            },
+            "yiisoft/yii2-faker": {
+                "phpunit/phpunit": {
+                    "Fix PHP 7 compatibility": "https://yiisoft.github.io/phpunit-patches/phpunit_php7.patch",
+                    "Fix PHP 8 compatibility": "https://yiisoft.github.io/phpunit-patches/phpunit_php8.patch"
+                }
+            }
         }
     },
     "repositories": [
@@ -64,6 +89,10 @@
         {
             "type": "vcs",
             "url": "https://github.com/yiipal-cms/yiipal-vm.git"
+        },
+        {
+            "type": "path",
+            "url": "yiipal-cms/core"
         }
     ]
 }

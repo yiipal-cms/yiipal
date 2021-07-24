@@ -2,6 +2,9 @@
 local.*
 *.local
 
+# Ignore yiipal core.
+docroot/core
+
 # phpstorm project files
 .idea
 
